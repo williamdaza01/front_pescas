@@ -26,23 +26,6 @@ export class ServicioDbpyService {
     return this.http.delete<any[]>(this.APIurl + '/repuestos/' + val);
   }
 
-  getMarcasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/marcas');
-  }
-
-  postMarcasList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/marcas/',val);
-  }
-
-  putMarcasList(val:any):Observable<any[]> {
-    console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/marcas/${val.id}` , val);
-  }
-
-  deleteMarcasList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/marcas/' + val);
-  }
-
   getModelosList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/modelos');
   }
