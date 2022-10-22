@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-crear-modelos',
-  templateUrl: './crear-modelos.component.html',
-  styleUrls: ['./crear-modelos.component.css']
+  selector: 'app-crear-cuenca',
+  templateUrl: './crear-cuenca.component.html',
+  styleUrls: ['./crear-cuenca.component.css']
 })
-export class CrearModelosComponent implements OnInit {
+export class CrearCuencaComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
@@ -29,7 +29,7 @@ export class CrearModelosComponent implements OnInit {
       Marca: this.marca,
       ano: this.ano
     };
-    this.service.postModelosList(val).subscribe( res => {
+    this.service.postCuencaList(val).subscribe( res => {
       alert(res.toString());
     });
   }
@@ -41,7 +41,7 @@ export class CrearModelosComponent implements OnInit {
       Marca: this.marca,
       ano: this.ano
     };
-    this.service.putModelosList(val).subscribe( res => {
+    this.service.putCuencaList(val).subscribe( res => {
       alert(res.toString());
     });
   }

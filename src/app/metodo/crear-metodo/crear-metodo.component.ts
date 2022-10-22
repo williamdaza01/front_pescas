@@ -29,7 +29,7 @@ export class CrearSedeComponent implements OnInit {
       Telefono: this.telefono,
       Direccion: this.direccion
     };
-    this.service.postSedesList(val).subscribe( res => {
+    this.service.postMetodoList(val).subscribe( res => {
       alert(res.toString());
     });
   }
@@ -41,7 +41,7 @@ export class CrearSedeComponent implements OnInit {
       Telefono: this.telefono,
       Direccion: this.direccion
     };
-    this.service.putSedesList(val).subscribe( res => {
+    this.service.putMetodoList(val).subscribe( res => {
       alert(res.toString());
     });
   } 

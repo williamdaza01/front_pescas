@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-ver-sedes',
-  templateUrl: './ver-sedes.component.html',
-  styleUrls: ['./ver-sedes.component.css']
+  selector: 'app-ver-metodo',
+  templateUrl: './ver-metodo.component.html',
+  styleUrls: ['./ver-metodo.component.css']
 })
-export class VerSedesComponent implements OnInit {
+export class VerMetodoComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  sedesList:any = [];
+  metodoList:any = [];
   Modaltitle:string = "";
   ActivateAddEditSiembra:boolean = false;
   sim:any;
   isShow:boolean = false;
 
   ngOnInit(): void {
-    this.verSedes();
+    this.verMetodo();
   }
 
-  verSedes() {
-    const getSede =  this.service.getSedesList().subscribe( data => {
-      this.sedesList = data;
+  verMetodo() {
+    const getSede =  this.service.getMetodoList().subscribe( data => {
+      this.metodoList = data;
     })
   } 
 
@@ -38,7 +38,7 @@ export class VerSedesComponent implements OnInit {
 
   closeClick(){
     this.ActivateAddEditSiembra=false;
-    this.verSedes();
+    this.verMetodo();
   }
 
   editSede(item:any){
@@ -49,9 +49,9 @@ export class VerSedesComponent implements OnInit {
 
   deleteSede(item:any){
     if(confirm("¿Seguro que desea eliminar la sede?")) {
-      this.service.deleteSedesList(item.id).subscribe( data => {
+      this.service.deleteMetodoList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verSedes();
+        this.verMetodo();
       })
     }
   }

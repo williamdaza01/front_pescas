@@ -3,32 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ModelosComponent } from './modelos/modelos.component';
-import { RepuestosComponent } from './repuestos/repuestos.component';
-import { SedesComponent } from './sedes/sedes.component';
-import { VerRepuestosComponent } from './repuestos/ver-repuestos/ver-repuestos.component';
-import { VerModelosComponent } from './modelos/ver-modelos/ver-modelos.component';
-import { VerSedesComponent } from './sedes/ver-sedes/ver-sedes.component';
+import { CuencaComponent } from './cuenca/cuenca.component';
+import { PescaComponent } from './pesca/pesca.component';
+import { MetodoComponent } from './metodo/metodo.component';
+import { VerPescaComponent } from './pesca/ver-pesca/ver-pesca.component';
+import { VerCuencaComponent } from './cuenca/ver-cuenca/ver-cuenca.component';
+import { VerMetodoComponent } from './metodo/ver-metodo/ver-metodo.component';
 import { ServicioDbpyService } from './servicio-dbpy.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CrearSedeComponent } from './sedes/crear-sede/crear-sede.component';
-import { CrearRepuestosComponent } from './repuestos/crear-repuestos/crear-repuestos.component';
-import { CrearModelosComponent } from './modelos/crear-modelos/crear-modelos.component';
+import { CrearSedeComponent } from './metodo/crear-sede/crear-sede.component';
+import { CrearPescaComponent } from './pesca/crear-pesca/crear-pesca.component';
+import { CrearCuencaComponent } from './cuenca/crear-cuenca/crear-cuenca.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModelosComponent,
-    RepuestosComponent,
-    SedesComponent,
-    VerRepuestosComponent,
-    VerModelosComponent,
-    VerSedesComponent,
+    CuencaComponent,
+    PescaComponent,
+    MetodoComponent,
+    VerPescaComponent,
+    VerCuencaComponent,
+    VerMetodoComponent,
     CrearSedeComponent,
-    CrearRepuestosComponent,
-    CrearModelosComponent,
+    CrearPescaComponent,
+    CrearCuencaComponent,
   ],
   imports: [
     BrowserModule,

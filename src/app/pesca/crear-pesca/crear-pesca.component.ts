@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-crear-repuestos',
-  templateUrl: './crear-repuestos.component.html',
-  styleUrls: ['./crear-repuestos.component.css']
+  selector: 'app-crear-pesca',
+  templateUrl: './crear-pesca.component.html',
+  styleUrls: ['./crear-pesca.component.css']
 })
-export class CrearRepuestosComponent implements OnInit {
+export class CrearPescaComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
@@ -35,7 +35,7 @@ export class CrearRepuestosComponent implements OnInit {
       Descripcion: this.descripcion,
       Sede: this.sede
     };
-    this.service.postRepuestosList(val).subscribe( res => {
+    this.service.postPescaList(val).subscribe( res => {
       alert(res.toString());
     });
   }
@@ -49,7 +49,7 @@ export class CrearRepuestosComponent implements OnInit {
       Descripcion: this.descripcion,
       Sede: this.sede
     };
-    this.service.putRepuestosList(val).subscribe( res => {
+    this.service.putPescaList(val).subscribe( res => {
       alert(res.toString());
     });
   } 

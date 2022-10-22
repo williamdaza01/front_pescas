@@ -10,57 +10,57 @@ export class ServicioDbpyService {
 
   constructor(private http:HttpClient) { }
 
-  getRepuestosList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/repuestos');
+  getPescaList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/pesca');
   }
 
-  postRepuestosList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/repuestos/',val);
+  postPescaList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/pesca/',val);
   }
 
-  putRepuestosList(val:any):Observable<any[]> {
+  putPescaList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/repuestos/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `/pesca/${val.id}` , val);
   }
-  deleteRepuestosList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/repuestos/' + val);
-  }
-
-  getModelosList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/modelos');
+  deletePescaList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/pesca/' + val);
   }
 
-  postModelosList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/modelos/',val);
+  getCuencaList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/cuenca');
   }
 
-  putModelosList(val:any):Observable<any[]> {
+  postCuencaList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/cuenca/',val);
+  }
+
+  putCuencaList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/modelos/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `/cuenca/${val.id}` , val);
   }
 
-  deleteModelosList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/modelos/' + val);
+  deleteCuencaList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/cuenca/' + val);
   }
 
   getContratistasList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/contratistas');
   }
 
-  getSedesList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/sedes');
+  getMetodoList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/metodo');
   }
 
-  postSedesList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/sedes/',val);
+  postMetodoList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/metodo/',val);
   }
 
-  putSedesList(val:any):Observable<any[]> {
+  putMetodoList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/sedes/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `/metodo/${val.id}` , val);
   }
 
-  deleteSedesList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/sedes/' + val);
+  deleteMetodoList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/metodo/' + val);
   }
 }

@@ -5,9 +5,9 @@
   data-target="#exampleModal"
   data-backdrop="static"
   data-keyboard="false"
-  (click)="addRepuesto()"
+  (click)="addCuenca()"
 >
-  Agregar Repuesto
+  Agregar Cuenca
 </button>
 
 <!-- Modal -->
@@ -34,10 +34,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <app-crear-repuestos
+        <app-crear-marcas
           [sim]="sim"
           *ngIf="ActivateAddEditSiembra"
-        ></app-crear-repuestos>
+        ></app-crear-marcas>
       </div>
     </div>
   </div>
@@ -47,27 +47,23 @@
   <thead>
     <th>Codigo</th>
     <th>Nombre</th>
-    <th>Precio</th>
-    <th>Modelo</th>
-    <th>Descripcion</th>
-    <th>Sede</th>
+    <th>Marca</th>
+    <th>Año</th>
     <th>Opciones</th>
   </thead>
   <tbody>
-    <tr *ngFor="let data of repuestosList">
+    <tr *ngFor="let data of cuencaList">
       <td>{{ data.id }}</td>
       <td>{{ data.Nombre }}</td>
-      <td>{{ data.Precio }}</td>
-      <td>{{ data.Modelo }}</td>
-      <td>{{ data.Descripcion }}o</td>
-      <td>{{ data.Sede }}</td>
+      <td>{{ data.Marca }}</td>
+      <td>{{ data.ano }}</td>
       <td>
         <button
           type="button"
           class="btn btn-primary mr-1"
           data-toggle="modal"
           data-target="#exampleModal"
-          (click)="editRepuesto(data)"
+          (click)="editCuenca(data)"
           data-backdrop="static"
           data-keyboard="false"
         >
@@ -86,7 +82,7 @@
         <button
           type="button"
           class="btn btn-danger mr-1"
-          (click)="deleteRepuesto(data)"
+          (click)="deleteCuenca(data)"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -2,34 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-ver-modelos',
-  templateUrl: './ver-modelos.component.html',
-  styleUrls: ['./ver-modelos.component.css']
+  selector: 'app-ver-cuenca',
+  templateUrl: './ver-cuenca.component.html',
+  styleUrls: ['./ver-cuenca.component.css']
 })
-export class VerModelosComponent implements OnInit {
+export class VerCuencaComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  modelosList:any = [];
+  cuencaList:any = [];
   Modaltitle:string = "";
   ActivateAddEditSiembra:boolean = false;
   sim:any;
 
   ngOnInit(): void {
-    this.verModelos();
+    this.verCuenca();
   }
 
-  verModelos() {
-    const getSede =  this.service.getModelosList().subscribe( data => {
-      this.modelosList = data;
+  verCuenca() {
+    const getSede =  this.service.getCuencaList().subscribe( data => {
+      this.cuencaList = data;
     })
   } 
 
-  addModelos() {
+  addCuenca() {
     this.sim ={
       Nombre: 0,
     }
-    this.Modaltitle="Agregar Modelos";
+    this.Modaltitle="Agregar Cuenca";
     this.ActivateAddEditSiembra=true;
   }
 
@@ -37,17 +37,17 @@ export class VerModelosComponent implements OnInit {
     this.ActivateAddEditSiembra=false;
   }
 
-  editModelos(item:any){
+  editCuenca(item:any){
     this.sim=item;
-    this.Modaltitle = "Editar Modelos";
+    this.Modaltitle = "Editar Cuenca";
     this.ActivateAddEditSiembra = true;
   }
 
-  deleteModelos(item:any){
+  deleteCuenca(item:any){
     if(confirm("¿Seguro que desea eliminar el modelo?")) {
-      this.service.deleteModelosList(item.id).subscribe( data => {
+      this.service.deleteCuencaList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verModelos();
+        this.verCuenca();
       })
     }
   }

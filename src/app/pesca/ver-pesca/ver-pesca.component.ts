@@ -2,26 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-ver-repuestos',
-  templateUrl: './ver-repuestos.component.html',
-  styleUrls: ['./ver-repuestos.component.css']
+  selector: 'app-ver-pesca',
+  templateUrl: './ver-pesca.component.html',
+  styleUrls: ['./ver-pesca.component.css']
 })
-export class VerRepuestosComponent implements OnInit {
+export class VerPescaComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  repuestosList:any = [];
+  pescaList:any = [];
   Modaltitle:string = "";
   ActivateAddEditSiembra:boolean = false;
   sim:any;
 
   ngOnInit(): void {
-    this.verRepuestos();
+    this.verPesca();
   }
 
-  verRepuestos() {
-    const getSede =  this.service.getRepuestosList().subscribe( data => {
-      this.repuestosList = data;
+  verPesca() {
+    const getSede =  this.service.getPescaList().subscribe( data => {
+      this.pescaList = data;
     })
   } 
 
@@ -49,9 +49,9 @@ export class VerRepuestosComponent implements OnInit {
 
   deleteRepuesto(item:any){
     if(confirm("¿Seguro que desea eliminar el repuesto?")) {
-      this.service.deleteRepuestosList(item.id).subscribe( data => {
+      this.service.deletePescaList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verRepuestos();
+        this.verPesca();
       })
     }
   }
