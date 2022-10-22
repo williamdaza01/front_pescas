@@ -28,9 +28,7 @@ export class VerMetodoComponent implements OnInit {
 
   addSede() {
     this.sim ={
-      Nombre: 0,
-      Direccion: 0,
-      Telefono: 0
+      Nombre: 0
     }
     this.Modaltitle="Agregar Sede";
     this.ActivateAddEditSiembra=true;
