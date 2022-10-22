@@ -19,15 +19,11 @@ export class CrearMetodoComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.sim.id;
     this.nombre = this.sim.nombre;
-    this.telefono = this.sim.telefono;
-    this.direccion = this.sim.direccion;
   }
 
   addSede(){
     const val ={
       Nombre: this.nombre,
-      Telefono: this.telefono,
-      Direccion: this.direccion
     };
     this.service.postMetodoList(val).subscribe( res => {
       alert(res.toString());
@@ -38,8 +34,6 @@ export class CrearMetodoComponent implements OnInit {
     const val ={
       id: this.id,
       Nombre: this.nombre,
-      Telefono: this.telefono,
-      Direccion: this.direccion
     };
     this.service.putMetodoList(val).subscribe( res => {
       alert(res.toString());

@@ -27,13 +27,12 @@ export class VerPescaComponent implements OnInit {
 
   addRepuesto() {
     this.sim ={
-      Nombre: 0,
-      Precio: 0,
-      Modelo: 0,
-      Descripcion: 0,
-      Sede: 0
+      Cuenca: 0,
+      Metodo: 0,
+      Fecha: 0,
+      Peso: 0,
     }
-    this.Modaltitle="Agregar Repuesto";
+    this.Modaltitle="Agregar Pesca";
     this.ActivateAddEditSiembra=true;
   }
 
@@ -43,12 +42,12 @@ export class VerPescaComponent implements OnInit {
 
   editRepuesto(item:any){
     this.sim=item;
-    this.Modaltitle = "Editar Repuesto";
+    this.Modaltitle = "Editar Pesca";
     this.ActivateAddEditSiembra = true;
   }
 
   deleteRepuesto(item:any){
-    if(confirm("¿Seguro que desea eliminar el repuesto?")) {
+    if(confirm("¿Seguro que desea eliminar la pesca?")) {
       this.service.deletePescaList(item.id).subscribe( data => {
         alert(data.toString());
         this.verPesca();

@@ -7,7 +7,7 @@
   data-keyboard="false"
   (click)="addRepuesto()"
 >
-  Agregar Repuesto
+  Agregar Pesca
 </button>
 
 <!-- Modal -->
@@ -46,21 +46,19 @@
 <table class="table table-striped">
   <thead>
     <th>Codigo</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Modelo</th>
-    <th>Descripcion</th>
-    <th>Sede</th>
+    <th>Cuenca</th>
+    <th>Metodo</th>
+    <th>Fecha</th>
+    <th>Peso</th>
     <th>Opciones</th>
   </thead>
   <tbody>
     <tr *ngFor="let data of pescaList">
       <td>{{ data.id }}</td>
-      <td>{{ data.Nombre }}</td>
-      <td>{{ data.Precio }}</td>
-      <td>{{ data.Modelo }}</td>
-      <td>{{ data.Descripcion }}o</td>
-      <td>{{ data.Sede }}</td>
+      <td>{{ data.Cuenca }}</td>
+      <td>{{ data.Metodo }}</td>
+      <td>{{ data.Fecha }}</td>
+      <td>{{ data.Peso }}o</td>
       <td>
         <button
           type="button"

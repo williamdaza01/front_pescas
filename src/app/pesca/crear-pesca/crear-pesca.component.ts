@@ -12,28 +12,26 @@ export class CrearPescaComponent implements OnInit {
 
   @Input() sim:any;
   id:string = "";
-  nombre:string = "";
-  precio:number = 0;
-  modelo:string = "";
-  descripcion:string = "";
+  cuenca:string = "";
+  metodo:number = 0;
+  fecha:string = "";
+  peso:string = "";
   sede:string = "";
 
   ngOnInit(): void {
     this.id = this.sim.id;
-    this.nombre = this.sim.nombre;
-    this.precio = this.sim.precio;
-    this.modelo = this.sim.modelo;
-    this.descripcion = this.sim.descripcion;
-    this.sede = this.sim.sede;
+    this.cuenca = this.sim.cuenca;
+    this.metodo = this.sim.metodo;
+    this.fecha = this.sim.fecha;
+    this.peso = this.sim.peso;
   }
 
   addRepuesto(){
     const val ={
-      Nombre: this.nombre,
-      Precio: this.precio,
-      Modelo: this.modelo,
-      Descripcion: this.descripcion,
-      Sede: this.sede
+      Cuenca: this.cuenca,
+      Metodo: this.metodo,
+      Fecha: this.fecha,
+      Peso: this.peso,
     };
     this.service.postPescaList(val).subscribe( res => {
       alert(res.toString());
@@ -43,11 +41,10 @@ export class CrearPescaComponent implements OnInit {
   updateRepuesto(){
     const val ={
       id: this.id,
-      Nombre: this.nombre,
-      Telefono: this.precio,
-      Direccion: this.modelo,
-      Descripcion: this.descripcion,
-      Sede: this.sede
+      Cuenca: this.cuenca,
+      Metodo: this.metodo,
+      Fecha: this.fecha,
+      Peso: this.peso,
     };
     this.service.putPescaList(val).subscribe( res => {
       alert(res.toString());
