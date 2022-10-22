@@ -13,7 +13,7 @@ import { ServicioDbpyService } from './servicio-dbpy.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CrearSedeComponent } from './metodo/crear-sede/crear-sede.component';
+import { CrearMetodoComponent } from './metodo/crear-metodo/crear-metodo.component';
 import { CrearPescaComponent } from './pesca/crear-pesca/crear-pesca.component';
 import { CrearCuencaComponent } from './cuenca/crear-cuenca/crear-cuenca.component';
 
@@ -26,7 +26,7 @@ import { CrearCuencaComponent } from './cuenca/crear-cuenca/crear-cuenca.compone
     VerPescaComponent,
     VerCuencaComponent,
     VerMetodoComponent,
-    CrearSedeComponent,
+    CrearMetodoComponent,
     CrearPescaComponent,
     CrearCuencaComponent,
   ],

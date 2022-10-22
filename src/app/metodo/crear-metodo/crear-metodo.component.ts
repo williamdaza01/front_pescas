@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 
 @Component({
-  selector: 'app-crear-sede',
-  templateUrl: './crear-sede.component.html',
-  styleUrls: ['./crear-sede.component.css']
+  selector: 'app-crear-metodo',
+  templateUrl: './crear-metodo.component.html',
+  styleUrls: ['./crear-metodo.component.css']
 })
-export class CrearSedeComponent implements OnInit {
+export class CrearMetodoComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
