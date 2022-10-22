@@ -1,0 +1,18 @@
+.comboBox {
+    display: inline-flex;
+}
+
+.container {
+    padding: 50px;
+}
+
+.dropdown {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 100px;
+}
+
+.navbar-expand-sm {
+    justify-content: center;
+}
