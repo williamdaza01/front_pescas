@@ -6,61 +6,58 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicioDbpyService {
-  readonly APIurl = "http://localhost:8080";
+  readonly APIurl = "http://127.0.0.1:8000/";
 
   constructor(private http:HttpClient) { }
 
   getPescaList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/pesca');
+    return this.http.get<any[]>(this.APIurl + 'pesca/');
   }
 
   postPescaList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/pesca/',val);
+    return this.http.post<any[]>(this.APIurl + 'pesca/',val);
   }
 
   putPescaList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/pesca/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `pesca/${val.id}` , val);
   }
   deletePescaList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/pesca/' + val);
+    return this.http.delete<any[]>(this.APIurl + 'pesca/' + val);
   }
 
   getCuencaList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/cuenca');
+    return this.http.get<any[]>(this.APIurl + 'cuenca/');
   }
 
   postCuencaList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/cuenca/',val);
+    return this.http.post<any[]>(this.APIurl + 'cuenca/',val);
   }
 
   putCuencaList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/cuenca/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `cuenca/${val.id}` , val);
   }
 
   deleteCuencaList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/cuenca/' + val);
-  }
-
-  getContratistasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/contratistas');
+    return this.http.delete<any[]>(this.APIurl + 'cuenca/' + val);
   }
 
   getMetodoList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/metodo');
+    return this.http.get<any[]>(this.APIurl + 'metodo');
   }
 
   postMetodoList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + '/metodo/',val);
+    return this.http.post<any[]>(this.APIurl + 'metodo/',val);
   }
 
   putMetodoList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `/metodo/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `metodo/${val.id}` , val);
   }
 
   deleteMetodoList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/metodo/' + val);
+    return this.http.delete<any[]>(this.APIurl + 'metodo/' + val);
   }
+
 }

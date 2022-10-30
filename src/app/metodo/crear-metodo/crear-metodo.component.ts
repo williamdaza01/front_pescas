@@ -11,7 +11,7 @@ export class CrearMetodoComponent implements OnInit {
   constructor(private service:ServicioDbpyService) { }
 
   @Input() sim:any;
-  id:string = "";
+  id:number = 0;
   nombre:string = "";
   telefono:number = 0;
   direccion:string = "";
@@ -23,7 +23,8 @@ export class CrearMetodoComponent implements OnInit {
 
   addSede(){
     const val ={
-      Nombre: this.nombre,
+      id:this.id,
+      nombre: this.nombre,
     };
     this.service.postMetodoList(val).subscribe( res => {
       alert(res.toString());
@@ -33,7 +34,7 @@ export class CrearMetodoComponent implements OnInit {
   updateSede(){
     const val ={
       id: this.id,
-      Nombre: this.nombre,
+      nombre: this.nombre,
     };
     this.service.putMetodoList(val).subscribe( res => {
       alert(res.toString());

@@ -11,7 +11,7 @@ export class CrearCuencaComponent implements OnInit {
   constructor(private service:ServicioDbpyService) { }
 
   @Input() sim:any;
-  id:string = "";
+  id:number = 0;
   nombre:string = "";
 
   ngOnInit(): void {
@@ -21,7 +21,8 @@ export class CrearCuencaComponent implements OnInit {
 
   addModelo(){
     const val ={
-      Nombre: this.nombre,
+      id: this.id,
+      nombre: this.nombre,
     };
     this.service.postCuencaList(val).subscribe( res => {
       alert(res.toString());

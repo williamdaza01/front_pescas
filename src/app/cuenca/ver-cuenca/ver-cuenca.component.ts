@@ -27,7 +27,7 @@ export class VerCuencaComponent implements OnInit {
 
   addCuenca() {
     this.sim ={
-      Nombre: 0,
+      nombre: 0,
     }
     this.Modaltitle="Agregar Cuenca";
     this.ActivateAddEditSiembra=true;

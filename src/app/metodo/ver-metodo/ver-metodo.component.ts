@@ -21,14 +21,17 @@ export class VerMetodoComponent implements OnInit {
   }
 
   verMetodo() {
-    const getSede =  this.service.getMetodoList().subscribe( data => {
+    const getMetodo=  this.service.getMetodoList().subscribe( data => {
+      console.log("data");
+      
       this.metodoList = data;
     })
   } 
 
   addSede() {
     this.sim ={
-      Nombre: 0
+      id:0,
+      nombre: ""
     }
     this.Modaltitle="Agregar Sede";
     this.ActivateAddEditSiembra=true;
@@ -46,7 +49,7 @@ export class VerMetodoComponent implements OnInit {
   }
 
   deleteSede(item:any){
-    if(confirm("¿Seguro que desea eliminar la sede?")) {
+    if(confirm("¿Seguro que desea eliminar el metodo?")) {
       this.service.deleteMetodoList(item.id).subscribe( data => {
         alert(data.toString());
         this.verMetodo();

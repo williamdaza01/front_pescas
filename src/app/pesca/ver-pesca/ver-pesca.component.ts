@@ -20,7 +20,7 @@ export class VerPescaComponent implements OnInit {
   }
 
   verPesca() {
-    const getSede =  this.service.getPescaList().subscribe( data => {
+    const getPesca =  this.service.getPescaList().subscribe( data => {
       this.pescaList = data;
     })
   } 
