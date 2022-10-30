@@ -27,6 +27,7 @@ export class CrearCuencaComponent implements OnInit {
     this.service.postCuencaList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   }
 
   updateModelo(){
@@ -37,6 +38,7 @@ export class CrearCuencaComponent implements OnInit {
     this.service.putCuencaList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   }
 
 

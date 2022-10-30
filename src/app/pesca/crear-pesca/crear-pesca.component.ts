@@ -53,6 +53,7 @@ export class CrearPescaComponent implements OnInit {
     this.service.postPescaList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   }
   
   updateRepuesto(){
@@ -66,6 +67,7 @@ export class CrearPescaComponent implements OnInit {
     this.service.putPescaList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   } 
 
   verCuencas(){

@@ -48,8 +48,9 @@ export class VerCuencaComponent implements OnInit {
       this.service.deleteCuencaList(item.id).subscribe( data => {
         alert(data.toString());
         this.verCuenca();
-      })
+      });
     }
+    window.location.reload();
   }
 
 

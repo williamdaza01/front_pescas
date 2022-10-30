@@ -53,5 +53,6 @@ export class VerPescaComponent implements OnInit {
         this.verPesca();
       })
     }
+    window.location.reload();
   }
 }

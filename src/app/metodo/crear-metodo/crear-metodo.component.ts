@@ -29,6 +29,7 @@ export class CrearMetodoComponent implements OnInit {
     this.service.postMetodoList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   }
 
   updateSede(){
@@ -39,6 +40,7 @@ export class CrearMetodoComponent implements OnInit {
     this.service.putMetodoList(val).subscribe( res => {
       alert(res.toString());
     });
+    window.location.reload();
   } 
 
 }

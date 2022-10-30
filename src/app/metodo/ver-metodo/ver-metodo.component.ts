@@ -53,8 +53,9 @@ export class VerMetodoComponent implements OnInit {
       this.service.deleteMetodoList(item.id).subscribe( data => {
         alert(data.toString());
         this.verMetodo();
-      })
+      });
     }
+    window.location.reload();
   }
 
 }
