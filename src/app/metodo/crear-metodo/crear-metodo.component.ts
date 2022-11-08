@@ -11,20 +11,20 @@ export class CrearMetodoComponent implements OnInit {
   constructor(private service:ServicioDbpyService) { }
 
   @Input() sim:any;
-  id:number = 0;
-  nombre:string = "";
-  telefono:number = 0;
-  direccion:string = "";
+  ID_METODO:number = 0;
+  NOMBRE_METODO:string = "";
 
   ngOnInit(): void {
-    this.id = this.sim.id;
-    this.nombre = this.sim.nombre;
+    this.ID_METODO = this.sim.ID_METODO;
+    this.NOMBRE_METODO = this.sim.NOMBRE_METODO;
   }
 
   addSede(){
+    const id = Date.now();
+    this.ID_METODO = Math.round(id/1000);    
     const val ={
-      id:this.id,
-      nombre: this.nombre,
+      ID_METODO:this.ID_METODO,
+      NOMBRE_METODO: this.NOMBRE_METODO,
     };
     this.service.postMetodoList(val).subscribe( res => {
       alert(res.toString());
@@ -34,13 +34,13 @@ export class CrearMetodoComponent implements OnInit {
 
   updateSede(){
     const val ={
-      id: this.id,
-      nombre: this.nombre,
+      ID_METODO: this.ID_METODO,
+      NOMBRE_METODO: this.NOMBRE_METODO,
     };
     this.service.putMetodoList(val).subscribe( res => {
       alert(res.toString());
     });
-    window.location.reload();
+   window.location.reload();
   } 
 
 }

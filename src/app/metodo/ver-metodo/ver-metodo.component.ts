@@ -30,8 +30,8 @@ export class VerMetodoComponent implements OnInit {
 
   addSede() {
     this.sim ={
-      id:0,
-      nombre: ""
+      ID_METODO:0,
+      NOMBRE_METODO: ""
     }
     this.Modaltitle="Agregar Sede";
     this.ActivateAddEditSiembra=true;
@@ -50,7 +50,7 @@ export class VerMetodoComponent implements OnInit {
 
   deleteSede(item:any){
     if(confirm("¿Seguro que desea eliminar el metodo?")) {
-      this.service.deleteMetodoList(item.id).subscribe( data => {
+      this.service.deleteMetodoList(item.ID_METODO).subscribe( data => {
         alert(data.toString());
         this.verMetodo();
       });

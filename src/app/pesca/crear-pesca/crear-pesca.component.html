@@ -5,8 +5,8 @@
             <select (change)="getIdCuenca()" [(ngModel)] = "idcuenca">
                 <option value="0">Cuencas</option>
                 <option *ngFor = "let data of cuencaList">
-                    {{data.id}}-
-                    {{data.nombre}}        
+                    {{data.ID_CUENCA}}-
+                    {{data.NOMBRE_CUENCA}}        
                 </option>
             </select>   
         </div>
@@ -17,20 +17,20 @@
             <select (change)="getIdMetodo()" [(ngModel)] = "idmetodo">
                 <option value="0">Metodos</option>
                 <option *ngFor = "let data of metodoList">
-                    {{data.id}}-
-                    {{data.nombre}}        
+                    {{data.ID_METODO}}-
+                    {{data.NOMBRE_METODO}}        
                 </option>
             </select>   
         </div>
     </div>
     <label class="col-sm-2 col-form-label">Fecha</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="fecha"
+        <input type="text" class="form-control" [(ngModel)]="FECHA_PESCA"
         placeholder="DD/MM/AAAA">
     </div>
     <label class="col-sm-2 col-form-label">Peso</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="peso"
+        <input type="text" class="form-control" [(ngModel)]="PESO_PESCADO"
         placeholder="Peso en g">
     </div>
     <button (click)="addCuenca()" class="btn btn-primary">

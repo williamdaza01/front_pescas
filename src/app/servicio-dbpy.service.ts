@@ -20,7 +20,7 @@ export class ServicioDbpyService {
 
   putPescaList(val:any):Observable<any[]> {
     console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `pesca/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `pesca/${val.ID_PESCA}` , val);
   }
   deletePescaList(val:any):Observable<any[]> {
     return this.http.delete<any[]>(this.APIurl + 'pesca/' + val);
@@ -35,8 +35,7 @@ export class ServicioDbpyService {
   }
 
   putCuencaList(val:any):Observable<any[]> {
-    console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `cuenca/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `cuenca/${val.ID_CUENCA}` , val);
   }
 
   deleteCuencaList(val:any):Observable<any[]> {
@@ -52,8 +51,7 @@ export class ServicioDbpyService {
   }
 
   putMetodoList(val:any):Observable<any[]> {
-    console.log(val.id);
-    return this.http.put<any[]>(this.APIurl + `metodo/${val.id}` , val);
+    return this.http.put<any[]>(this.APIurl + `metodo/${val.ID_METODO}` , val);
   }
 
   deleteMetodoList(val:any):Observable<any[]> {

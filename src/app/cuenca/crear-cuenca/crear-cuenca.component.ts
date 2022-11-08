@@ -11,18 +11,20 @@ export class CrearCuencaComponent implements OnInit {
   constructor(private service:ServicioDbpyService) { }
 
   @Input() sim:any;
-  id:number = 0;
-  nombre:string = "";
+  ID_CUENCA:number = 0;
+  NOMBRE_CUENCA:string = "";
 
   ngOnInit(): void {
-    this.id = this.sim.id;
-    this.nombre = this.sim.nombre;
+    this.ID_CUENCA = this.sim.ID_CUENCA;
+    this.NOMBRE_CUENCA = this.sim.NOMBRE_CUENCA;
   }
 
   addModelo(){
+    const id = Date.now();
+    this.ID_CUENCA = Math.round(id/1000);
     const val ={
-      id: this.id,
-      nombre: this.nombre,
+      ID_CUENCA: this.ID_CUENCA,
+      NOMBRE_CUENCA: this.NOMBRE_CUENCA,
     };
     this.service.postCuencaList(val).subscribe( res => {
       alert(res.toString());
@@ -32,8 +34,8 @@ export class CrearCuencaComponent implements OnInit {
 
   updateModelo(){
     const val ={
-      id: this.id,
-      Nombre: this.nombre,
+      ID_CUENCA: this.ID_CUENCA,
+      NOMBRE_CUENCA: this.NOMBRE_CUENCA,
     };
     this.service.putCuencaList(val).subscribe( res => {
       alert(res.toString());

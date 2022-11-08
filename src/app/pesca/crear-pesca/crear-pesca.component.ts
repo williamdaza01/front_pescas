@@ -13,21 +13,21 @@ export class CrearPescaComponent implements OnInit {
   @Input() sim:any;
   cuencaList: any=[];
   metodoList: any=[];
-  id:number = 0;
-  cuenca:number = 0;
-  metodo:number = 0;
-  fecha:string = "";
-  peso:string = "";
+  ID_PESCA:number = 0;
+  ID_CUENCA:number = 0;
+  ID_METODO:number = 0;
+  FECHA_PESCA:string = "";
+  PESO_PESCADO:string = "";
   sede:string = "";
   idcuenca:string="0";
   idmetodo:string="0";
 
   ngOnInit(): void {
-    this.id = this.sim.id;
-    this.cuenca = this.sim.cuenca;
-    this.metodo = this.sim.metodo;
-    this.fecha = this.sim.fecha;
-    this.peso = this.sim.peso;
+    this.ID_PESCA = this.sim.ID_PESCA;
+    this.ID_CUENCA = this.sim.ID_CUENCA;
+    this.ID_METODO = this.sim.ID_METODO;
+    this.FECHA_PESCA = this.sim.FECHA_PESCA;
+    this.PESO_PESCADO = this.sim.PESO_PESCADO;
     this.verCuencas();
     this.verMetodos();
   }
@@ -43,12 +43,14 @@ export class CrearPescaComponent implements OnInit {
   }    
   
   addCuenca(){
+    const id = Date.now();
+    this.ID_PESCA = Math.round(id/1000);
     const val ={
-      id: this.id,
-      idCuenca: this.getIdCuenca(),
-      idMetodo: this.getIdMetodo(),
-      fecha: this.fecha,
-      peso: this.peso,
+      ID_PESCA: this.ID_PESCA,
+      ID_CUENCA: this.getIdCuenca(),
+      ID_METODO: this.getIdMetodo(),
+      FECHA_PESCA: this.FECHA_PESCA,
+      PESO_PESCADO: this.PESO_PESCADO,
     };
     this.service.postPescaList(val).subscribe( res => {
       alert(res.toString());
@@ -58,11 +60,11 @@ export class CrearPescaComponent implements OnInit {
   
   updateRepuesto(){
     const val ={
-      id: this.id,
-      idCuenca: this.getIdCuenca(),
-      idMetodo: this.getIdMetodo(),
-      fecha: this.fecha,
-      peso: this.peso,
+      ID_PESCA: this.ID_PESCA,
+      ID_CUENCA: this.getIdCuenca(),
+      ID_METODO: this.getIdMetodo(),
+      FECHA_PESCA: this.FECHA_PESCA,
+      PESO_PESCADO: this.PESO_PESCADO,
     };
     this.service.putPescaList(val).subscribe( res => {
       alert(res.toString());

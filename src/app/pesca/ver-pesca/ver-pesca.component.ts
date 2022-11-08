@@ -48,7 +48,7 @@ export class VerPescaComponent implements OnInit {
 
   deleteRepuesto(item:any){
     if(confirm("¿Seguro que desea eliminar la pesca?")) {
-      this.service.deletePescaList(item.id).subscribe( data => {
+      this.service.deletePescaList(item.ID_PESCA).subscribe( data => {
         alert(data.toString());
         this.verPesca();
       })

@@ -45,7 +45,7 @@ export class VerCuencaComponent implements OnInit {
 
   deleteCuenca(item:any){
     if(confirm("¿Seguro que desea eliminar el modelo?")) {
-      this.service.deleteCuencaList(item.id).subscribe( data => {
+      this.service.deleteCuencaList(item.ID_CUENCA).subscribe( data => {
         alert(data.toString());
         this.verCuenca();
       });
